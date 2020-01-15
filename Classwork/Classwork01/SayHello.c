@@ -1,11 +1,15 @@
+
 #include <stdio.h>
 #include <stdlib.h>
+#define LIMIT 100
 
 int main(int argc, char *argv[])
 {
-    char name[25];
-    printf("Please enter your name below:\n");
-    gets(name);
-    printf("Hello, %s\n", name);
-}
+  char name[LIMIT];
 
+  printf("Enter your name: ");
+  gets(name);
+  printf("Hello, %s", name);
+
+  return 0;
+}
