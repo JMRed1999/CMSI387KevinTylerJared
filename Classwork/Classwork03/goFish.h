@@ -3,7 +3,9 @@
 #define seven '7'
 #define DIGIT_LIMIT 10
 #define STRING_LIMIT 250
-int i, k, j, sum, SEVEN_COUNT, arr[LIMIT];
+int i, k, j, SEVEN_COUNT;
 char MAX_CHARS[STRING_LIMIT], STRING_TO_NUM[DIGIT_LIMIT];
 double average;
-int nums[LIMIT] = { 0 }; 
+
+void read();
+void get_sum();
