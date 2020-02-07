@@ -2,9 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include "goFish.h"
+int nums[LIMIT] = { 0 };
+void read()
+{
+  int arr[LIMIT], sum;
 
-int  main()  
-{ 
   /* Read inputs */
   printf("Enter Number: ");  
   for(i = 0; i < LIMIT; i++)  
@@ -23,6 +25,11 @@ int  main()
     i++;
     j++;
   }
+  get_sum(nums[LIMIT]);
+}
+
+void get_sum(char *values)
+{
   int sum = 0;
   double average = 0;
   strcpy(MAX_CHARS, "");
@@ -43,4 +50,9 @@ int  main()
 			SEVEN_COUNT++;
 	}
   printf("Sum: %d\nAverage: %f\nInput values: %s\nNumber of Sevens: %d", sum, sum/average, MAX_CHARS, SEVEN_COUNT);
+}
+
+int  main()  
+{ 
+  read();
 }
