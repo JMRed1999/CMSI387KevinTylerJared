@@ -1,0 +1,34 @@
+
+Evaluation for Homework 1
+CMSI 387 - Operating Systems
+============================
+
+Question 1: difference     -  1 point
+Question 2: relationship   -  1 point
+Question 3: topics         -  1 point
+Question 4a:               -  1 point
+Question 4b:               -  1 point
+Question 4c:               -  1 point
+Question 5 program:        -  1 point
+Question 5 print msg:      -  1 point
+Question 5 main kill:      -  1 point
+Question 6 shortest:       -  1 point
+Question 6 policy:         -  1 point
+Question 7 program         -  1 point
+
+Total possible points:     12 points
+           your score:     12 points
+       homework total:     12/12 = 100% which is an A-plus
+
+
+Very nice work on this assignment!
+
+Thanks for your feedback on your interests in the class...
+I shall include more on security in the coming weeks!
+
+Not *quite* on the output of "userInfo.c" ~ your program prints
+the output all on one line and the intent was to print each item
+on a separate line but using a single printf statement.
+
+Close enough this time, though....  :)
+

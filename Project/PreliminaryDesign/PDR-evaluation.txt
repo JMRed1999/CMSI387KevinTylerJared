@@ -1,0 +1,17 @@
+Tyler, Kevin, and Jared
+
+CMSI 387 Operating Systems
+   Semester Project
+===================================
+
+Wow, this is a wonderful idea!  With the advent of newer computers
+that don't have USB 2.0 or USB 3.0 ports, USB-C is becoming the
+go-to port.  However, few mouse makers have yet to get on board so
+that there are not many mice with USB-C wireless dongles yet.  Thus
+bluetooth is becoming the way to go for such peripheral connectivity
+and making it easier to manage will be VERY nice!
+
+Very useful idea!!
+
+Project approved.  Good work and good luck!
+
