@@ -1,0 +1,51 @@
+
+
+CMSI 387 Operating Systems
+Results for Homework #2 Evaluation
+   Tyler, Kevin, and Jared
+==================================
+
+Question 1 mutex reversing:          5/ 5 points
+   EXCELLENT analysis and example!
+
+Question 2 auditing code change:     5/ 5 points
+
+Question 3 test program:            18/20 points
+   Unfortunately, because you used a vector package to which I have no
+      access, I can't run your code for either this problem or number 4.
+      I reviewed the code, and knowing your group's performance, I'm sure
+      it works.  However, I have to take points off since I can't actually
+      run it myself.
+
+Question 4 notifyall() addition:     8/10 points
+   See question 3
+
+Question 5a 2-phase locking:         5/ 5 points
+
+Question 5b short read locks:        4/ 5 points
+   Actually, no, it's not possible.  With read committed isolation, the
+      writes will have exlusive locks, so T1 will have exclusive write 
+      access for the duration of the transaction.  Since write locks are
+      exclusive, in this case it's the same outcome as with two-phase
+      locking.
+
+Question 5c snapshot isolation:      5/ 5 points
+
+Question 6 virtual address xlate:    5/ 5 points
+
+Question 7 calc. explanation:        5/ 5 points
+
+Question 8 loop 4096 analysis:      20/20 points
+   VERY well done on this one.  Good write up and nice work on the code.
+
+Question 9 fork() tree:             15/15 points
+   For this one, it would have been helpful to have the PID's for each of
+      the forked processes.  The tree shape looks right, though....
+
+Total 95 out of 100 = 95.00% which is an A
+
+Comments:
+---------
+Very nice work on this assignment!
+
+Nice work!
