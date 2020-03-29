@@ -1,0 +1,30 @@
+Tyler, Kevin, and Jarod
+
+CMSI 387 Operating Systems
+   Semester Project
+===================================
+This is very nice!  One comment:
+
+By "detailed list of modules" it was intended that you provide some
+details of what modifications you will do to each one of them.
+
+
+Evaluation:
+   2.1   15 out of 25
+   2.2   25 out of 25
+   2.3   25 out of 25
+   2.4   25 out of 25
+
+   total 90 out of 100 which is an A-minus
+
+Good start!
+
+Total on project for the semester:
+
+   homework01     100.0%
+   homework02      95.0%
+   project so far  95.0% [19 out of 20]
+
+   participation  Tyler:  86.95% so far
+                  Kevin: 100.0%  so far
+                  Jarod: 100.0%  so far
