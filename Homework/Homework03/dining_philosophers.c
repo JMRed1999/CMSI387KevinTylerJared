@@ -30,7 +30,7 @@ dispatch_semaphore_t mutex;
 dispatch_semaphore_t sticks[NUM_PHILOSOPHERS];
 #endif
 
-void scan_table(int philosopher)
+void scan_neighbors(int philosopher)
 {
     if (state[philosopher] == HUNGRY && state[LEFT] != EATING && state[RIGHT] != EATING)
     {
@@ -43,16 +43,6 @@ void scan_table(int philosopher)
                philosopher + 1, LEFT + 1, philosopher + 1);
 
         printf("Philosopher %d is now eating\n", philosopher + 1);
-
-        // Broadcast to other philosophers that the current philosopher is eating.
-        if (TARGET_OS_WIN32)
-        {
-            sem_post(&mutex);
-        }
-        else
-        {
-            dispatch_semaphore_signal(mutex);
-        }
     }
 }
 
@@ -72,10 +62,10 @@ void pickup_chopstick(int philosopher)
 
     printf("Philosopher %d is Hungry and needs a chopstick\n", philosopher + 1);
 
-    // Scan the table and begin eating only if both chopsticks are available
-    scan_table(philosopher);
+    // Scan each neighbor and begin eating only if both chopsticks are available
+    scan_neighbors(philosopher);
 
-    // Broadcast to other philosophers that the current philosopher is eating
+    // Unlock the universal mutex after scanning neighbors.
     if (TARGET_OS_WIN32)
     {
         sem_post(&mutex);
@@ -85,7 +75,7 @@ void pickup_chopstick(int philosopher)
         dispatch_semaphore_signal(mutex);
     }
 
-    // After scanning the table, if the current philosopher is unable to start eating, wait until chopsticks are available.
+    // Wait until chopsticks are available.
     if (TARGET_OS_WIN32)
     {
         sem_wait(&sticks[philosopher]);
@@ -95,14 +85,13 @@ void pickup_chopstick(int philosopher)
         dispatch_semaphore_wait(mutex, 0);
     }
 
-    // Wait and allow other philosophers to update their current state at the dining table
     sleep(1);
 }
 
 void putdown_chopstick(int philosopher)
 {
 
-    // Wait until the neighboring philosopher broadcasts that they are done eating before attempting to putdown a chopstick
+    // Wait until the neighboring philosopher broadcasts that they are done eating before attempting to put down a chopstick
     if (TARGET_OS_WIN32)
     {
         sem_wait(&mutex);
@@ -112,7 +101,7 @@ void putdown_chopstick(int philosopher)
         dispatch_semaphore_wait(mutex, 0);
     }
 
-    // Putdown chop stick
+    // Update state to "IDLE" since the philosopher is releasing their chopsticks
     state[philosopher] = IDLE;
 
     printf("Philosopher %d is putting down chopstick #%d from their left and chopstick #%d from their right\n",
@@ -120,11 +109,11 @@ void putdown_chopstick(int philosopher)
     printf("Philosopher %d is IDLE\n", philosopher + 1);
 
     // Examine the philosopher's state to the current philosopher's left.
-    scan_table(LEFT);
+    scan_neighbors(LEFT);
     // Examine the philosopher's state to the current philosopher's right.
-    scan_table(RIGHT);
+    scan_neighbors(RIGHT);
 
-    // After scanning the table, notify the philosophers that the current philosopher is now idle.
+    // After scanning their neighbors, notify the philosophers that the current philosopher is now idle unlocking the global state.
     if (TARGET_OS_WIN32)
     {
         sem_post(&mutex);
