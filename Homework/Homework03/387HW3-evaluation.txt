@@ -1,0 +1,29 @@
+
+Evaluation for Homework 3
+CMSI 387 - Operating Systems
+============================
+
+Question 1: dining philosophers program:   20.00 points out of 20 possible
+Question 2: why immune explanation     :   10.00 points out of 10 possible
+Question 3: file processing "C" program:   15.00 points out of 20 possible
+Question 4: mmap program "C" program   :   20.00 points out of 20 possible
+Question 5: appropriate class explained:   10.00 points out of 10 possible
+
+Total possible points:     80.00 points
+           your score:     75.00 points
+       homework total:     75.00/80.00 = 93.75% which is an A
+
+Comments:
+---------
+OUTSTANDING job on Q1.  Platform independence!!
+
+Great job on Q2.  The global mutex will indeed solve the problem of a race
+condition so that the philosopher who drops the two chopsticks cannot simply
+pick them up again!
+
+Q3, not quite what was being asked.  The idea was to use the execlp system
+call to execute the "tr" command.  Also, the code was supposed to be in "C"
+so why is there a "namespace" line in there?  It works, though; partial credit.
+
+Great job!
+
