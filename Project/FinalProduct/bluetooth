@@ -1,0 +1,5 @@
+#!/bin/bash
+
+gcc -o toggleon toggleon.c && gcc -o toggleoff toggleoff.c
+
+$PWD/toggle"$1"
